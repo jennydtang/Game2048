@@ -1,7 +1,6 @@
 package com.codegym.games.game2048;
 
 import java.util.Arrays;
-
 import com.codegym.engine.cell.*;
 import com.codegym.engine.cell.Game;
 
@@ -23,7 +22,6 @@ public class Game2048 extends Game {
         gameField = new int[4][4];
         createNewNumber();
         createNewNumber();
-
     }
 
     private void drawScene() {
@@ -63,30 +61,15 @@ public class Game2048 extends Game {
         if (gameField[y][x] != 0) {
             createNewNumber();
         } else {
-
             int i = getRandomNumber(10);
             int chance;
-            if (i == 9)
+            if (i == 9) {
                 chance = 4;
-            else
+            } else {
                 chance = 2;
-            gameField[y][x] = chance;
-
+                gameField[y][x] = chance;
+            }
         }
-
-        // int x = getRandomNumber(SIDE);
-        // int y = getRandomNumber(SIDE);
-        // int chance = getRandomNumber(10);
-
-        // if (chance == 9) {
-        // gameField[x][y] = 4;
-        // } else {
-        // gameField[x][y] = 2;
-        // }
-
-        // if (getMaxTileValue() == 2048) {
-        // win();
-        // }
     }
 
     private Color getColorByValue(int value) {
